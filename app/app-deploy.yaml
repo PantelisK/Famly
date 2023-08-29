@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app-deployment
+spec:
+  # ... other settings ...
+  selector:
+    matchLabels:
+      app: famly-app
+  template:
+    metadata:
+      labels:
+        app: famly-app
+    spec:
+      containers:
+        - name: famly-app
+          image: pant7/famly-app:v1
+          imagePullPolicy: Always
+          env:
+            - name: DB_HOST
+              value: mysql-service
+            - name: DB_USER
+              value: root
+            - name: DB_PASSWORD  # Make sure this matches the name in your app code
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: mysql-root-password
