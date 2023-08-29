@@ -1,0 +1,12 @@
+- HA
+- Dev and test environment
+- Persistent Storage
+- Limits/Requests
+- Monitoring/Logging
+- KPIs/SLOs
+- AutoScaling
+- CI/CD and tests
+- Backup and restore strategies
+- Security <.<
+- Configmaps for some things that are hardcoded right now
+- Cache and CDNs
