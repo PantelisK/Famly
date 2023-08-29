@@ -2,7 +2,7 @@ import os
 import flask
 import mysql.connector
 
-db_host = os.environ.get('DB_HOST', 'mysql-service')  # Use the service name
+db_host = os.environ.get('DB_HOST')  # Use the service name
 db_port = int(os.environ.get('DB_PORT', '3306'))
 db_user = os.environ.get('DB_USER', 'root')
 db_password = os.environ.get('DB_PASSWORD')
@@ -16,7 +16,7 @@ class DBManager:
             port=db_port,
             user=db_user,
             password=db_password,
-            database='your_database_name',  # Replace with your database name
+            database='example',  # Replace with your database name
             auth_plugin='mysql_native_password'        )
         self.cursor = self.connection.cursor()
 
